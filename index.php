@@ -65,8 +65,7 @@ $rs  = mysqli_query($con, $qry);
 
 if($rs)
 {
-	$successMsg[$file] = "Image is uploaded successfully";
-    // echo "<button><a href='$targetPath'download>Download</a></button>";
+	$successMsg[$file] = "Image is uploaded successfully<button><a href='$targetPath'download>Download</a></button>";
 }
 else
 {
