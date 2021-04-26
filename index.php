@@ -41,24 +41,13 @@ $targetFolder = "prod_images";
 
     // Compress Image
    compressImage($fileArray['tmp_name'],$targetPath,60);
-   include('conn.php');
-$sr = $_GET['sr_no'];
-$request = "SELECT * FROM `products` WHERE sr_no=$sr";
-$query = mysqli_query($con,$request);
-
-if(mysqli_num_rows($query) > 0){
-  
-while( $fech = mysqli_fetch_assoc($query)){
-$sr = $fech['sr_no'];
-$title = $fech['title'];
-$img_id = $fech['image_id']; 
+   
 							// echo $img_id;
-	}
-}
+
 							//kjh
 
 							
-$qry ="INSERT INTO `product_images`(`image_id`, `src`, `status`) VALUES ('$img_id', '".$targetPath."', '1')";
+$qry ="INSERT INTO `product_images`(`src`) VALUES ('".$targetPath."')";
 
 
 $rs  = mysqli_query($con, $qry);
